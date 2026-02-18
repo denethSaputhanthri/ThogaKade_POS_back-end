@@ -2,10 +2,14 @@ package edu.icet.repository.impl;
 
 import edu.icet.model.Customer;
 import edu.icet.repository.CustomerRepository;
+import org.springframework.stereotype.Repository;
+
 
 import java.util.List;
-
+@Repository
 public class CustomerRepositoryImpl implements CustomerRepository {
+
+
     @Override
     public boolean addCustomer(Customer customer) {
         return false;
