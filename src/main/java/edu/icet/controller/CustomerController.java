@@ -12,6 +12,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/customer")
 @Tag(name = "Customer-Controller")
+@CrossOrigin
 public class CustomerController {
 
     final private CustomerService service;
