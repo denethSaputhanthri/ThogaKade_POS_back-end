@@ -12,6 +12,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/item")
 @Tag(name = "Item-Controller")
+@CrossOrigin
 public class ItemController {
 
     final private ItemService service;
