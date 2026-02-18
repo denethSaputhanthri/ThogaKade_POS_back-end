@@ -16,21 +16,21 @@ public class ItemServiceImpl implements ItemService{
 
     @Override
     public boolean addItem(Item item) {
-        return false;
+        return repository.addItem(item);
     }
 
     @Override
     public boolean updateItem(Item item) {
-        return false;
+        return repository.updateItem(item);
     }
 
     @Override
     public boolean deleteItem(Integer id) {
-        return false;
+        return repository.deleteItem(id);
     }
 
     @Override
     public List<Item> getAll() {
-        return List.of();
+        return repository.getAll();
     }
 }
