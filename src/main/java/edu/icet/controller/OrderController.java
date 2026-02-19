@@ -13,6 +13,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/order")
 @Tag(name = "Order-Controller")
+@CrossOrigin
 public class OrderController {
 
     final private OrderService service;
