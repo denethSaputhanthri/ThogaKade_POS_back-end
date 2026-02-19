@@ -16,21 +16,21 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public boolean addOrder(Order order) {
-        return false;
+        return repository.addOrder(order);
     }
 
     @Override
     public boolean updateOrder(Order order) {
-        return false;
+        return repository.updateOrder(order);
     }
 
     @Override
     public boolean deleteOrder(Integer id) {
-        return false;
+        return repository.deleteOrder(id);
     }
 
     @Override
     public List<Order> getAll() {
-        return List.of();
+        return repository.getAll();
     }
 }
