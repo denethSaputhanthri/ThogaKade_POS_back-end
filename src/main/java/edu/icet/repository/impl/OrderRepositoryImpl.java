@@ -31,6 +31,14 @@ public class OrderRepositoryImpl implements OrderRepository {
 
     @Override
     public List<Order> getAll() {
-        return List.of();
+        String sql="SELECT * FROM orders";
+        List<Order>orderList=template.query(sql,(rs, rowNum) -> {
+            Order order=new Order();
+            order.setId(rs.getString(1));
+            order.setOrderDate(rs.getDate(2).toLocalDate());
+            order.setCustomerId(rs.getString(3));
+            return order;
+        });
+        return orderList;
     }
 }
