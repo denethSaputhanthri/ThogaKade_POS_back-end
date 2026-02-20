@@ -16,7 +16,12 @@ public class OrderRepositoryImpl implements OrderRepository {
 
     @Override
     public boolean addOrder(Order order) {
-        return false;
+        String sql ="INSERT INTO orders values(?,?,?)";
+        return template.update(sql,
+                order.getId(),
+                order.getOrderDate(),
+                order.getCustomerId()
+                )>0;
     }
 
     @Override
