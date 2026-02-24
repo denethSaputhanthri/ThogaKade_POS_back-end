@@ -35,7 +35,6 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     @Override
     public boolean updateCustomer(Customer customer) {
         String sql ="UPDATE customer SET CustTitle=?, CustName=?, DOB=?, salary=?, CustAddress=?, City=?, Province=?, PostalCode=? WHERE CustID=? ";
-
         return template.update(sql,
                 customer.getTitle(),
                 customer.getName(),
