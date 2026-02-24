@@ -28,9 +28,9 @@ public class OrderController {
         return service.updateOrder(order);
     }
 
-    @DeleteMapping("/delete/{id}")
-    public boolean deleteOrder(@PathVariable Integer id){
-        return service.deleteOrder(id);
+    @DeleteMapping("/delete/{orderId}")
+    public boolean deleteOrder(@PathVariable String orderId){
+        return service.deleteOrder(orderId);
     }
 
     @GetMapping("/get")
