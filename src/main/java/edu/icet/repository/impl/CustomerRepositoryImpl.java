@@ -34,12 +34,25 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 
     @Override
     public boolean updateCustomer(Customer customer) {
-        return false;
+        String sql ="UPDATE customer SET CustTitle=?, CustName=?, DOB=?, salary=?, CustAddress=?, City=?, Province=?, PostalCode=? WHERE CustID=? ";
+
+        return template.update(sql,
+                customer.getTitle(),
+                customer.getName(),
+                customer.getDobValue(),
+                customer.getSalary(),
+                customer.getAddress(),
+                customer.getCity(),
+                customer.getProvince(),
+                customer.getPostalCode(),
+                customer.getId()
+                )>0;
     }
 
     @Override
     public boolean deleteCustomer(Integer id) {
-        return false;
+        String sql = " delete from customer where CustId=?";
+        return template.update(sql,id)>0;
     }
 
     @Override
