@@ -25,8 +25,8 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public boolean deleteOrder(Integer id) {
-        return repository.deleteOrder(id);
+    public boolean deleteOrder(String orderId) {
+        return repository.deleteOrder(orderId);
     }
 
     @Override

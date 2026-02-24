@@ -17,7 +17,14 @@ public class ItemRepositoryImpl implements ItemRepository {
 
     @Override
     public boolean addItem(Item item) {
-        return false;
+        String sql = "INSERT INTO item values(?,?,?,?,?)";
+        return template.update(sql,
+            item.getId(),
+            item.getDescription(),
+            item.getPackSize(),
+            item.getUnitPrice(),
+            item.getQty()
+        )>0;
     }
 
     @Override
@@ -26,8 +33,9 @@ public class ItemRepositoryImpl implements ItemRepository {
     }
 
     @Override
-    public boolean deleteItem(Integer id) {
-        return false;
+    public boolean deleteItem(String id) {
+        String sql="delete from item where ItemCode=?";
+        return template.update(sql,id)>0;
     }
 
     @Override
@@ -35,11 +43,11 @@ public class ItemRepositoryImpl implements ItemRepository {
         String sql="SELECT * FROM item";
         List<Item>itemList=template.query(sql,(rs, rowNum) -> {
             Item item=new Item();
-            item.setCode(rs.getString(1));
+            item.setId(rs.getString(1));
             item.setDescription(rs.getString(2));
             item.setPackSize(rs.getString(3));
             item.setUnitPrice(rs.getDouble(4));
-            item.setStock(rs.getInt(5));
+            item.setQty(rs.getInt(5));
             return item;
         });
         return itemList;
