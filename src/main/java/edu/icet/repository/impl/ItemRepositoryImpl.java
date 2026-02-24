@@ -33,8 +33,9 @@ public class ItemRepositoryImpl implements ItemRepository {
     }
 
     @Override
-    public boolean deleteItem(Integer id) {
-        return false;
+    public boolean deleteItem(String id) {
+        String sql="delete from item where ItemCode=?";
+        return template.update(sql,id)>0;
     }
 
     @Override

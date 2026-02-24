@@ -7,6 +7,6 @@ import java.util.List;
 public interface ItemRepository {
     boolean addItem(Item item);
     boolean updateItem(Item item);
-    boolean deleteItem(Integer id);
+    boolean deleteItem(String id);
     List<Item> getAll();
 }
