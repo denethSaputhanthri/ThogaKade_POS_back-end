@@ -7,6 +7,6 @@ import java.util.List;
 public interface CustomerService {
     boolean addCustomer(Customer customer);
     boolean updateCustomer(Customer customer);
-    boolean deleteCustomer(Integer id);
+    boolean deleteCustomer(String id);
     List<Customer>getAll();
 }
