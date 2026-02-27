@@ -26,7 +26,12 @@ public class OrderRepositoryImpl implements OrderRepository {
 
     @Override
     public boolean updateOrder(Order order) {
-        return false;
+        String sql ="UPDATE orders SET OrderDate=?,CustID=? WHERE OrderID=?";
+        return template.update(sql,
+                order.getOrderDate(),
+                order.getCustomerId(),
+                order.getId()
+        )>0;
     }
 
     @Override
