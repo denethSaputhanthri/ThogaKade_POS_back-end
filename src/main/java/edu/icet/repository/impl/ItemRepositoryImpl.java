@@ -29,7 +29,14 @@ public class ItemRepositoryImpl implements ItemRepository {
 
     @Override
     public boolean updateItem(Item item) {
-        return false;
+        String sql = "UPDATE item SET Description=?,PackSize=?,UnitPrice=?,QtyOnHand=? WHERE ItemCode=?";
+        return template.update(sql,
+                item.getDescription(),
+                item.getPackSize(),
+                item.getUnitPrice(),
+                item.getQty(),
+                item.getId()
+        )>0;
     }
 
     @Override
